@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-video col-video-full">
+                <div class="video-frame">
+                    <div class="video-remote">
+                        <div class="video-frame-status">
+                            <span>Ao Vivo</span>
+                        </div>
+                        <div class="video-loading"></div>
+                        <div id="videos-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button (click)="onCreateShow()" *ngIf="!hasShowStart">
+            Start Streaming
+        </button>
+        <button (click)="onStopShow()" *ngIf="!!hasShowStart">
+            Stop Streaming
+        </button>
+    </div>
+</div>
