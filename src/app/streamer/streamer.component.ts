@@ -34,29 +34,35 @@ export class StreamerComponent implements OnInit {
 
     this.connection.socketURL = environment.socketio;
 
+    this.connection.extra.isAudioMuted = true;
+
+    console.log(this.connection)
+
     this.connection.session = {
       audio: true,
-      video: true
+      video: true,
+      oneway: true
     };
 
     this.connection.sdpConstraints.mandatory = {
-      OfferToReceiveAudio: true,
-      OfferToReceiveVideo: true
+      OfferToReceiveAudio: false,
+      OfferToReceiveVideo: false
     };
 
-    this.connection.onstream = function (event) {
+    this.connection.onstream = event => {
       if (event.type === 'local') {
         $('#videos-container').append(event.mediaElement);
         $(`#${event.streamid}`).attr('autoplay', true);
         $(`#${event.streamid}`).attr('playsinline', true);
         $(`#${event.streamid}`).attr('muted', true);
+        $(`#${event.streamid}`).attr('volume', 0);
         $(`#${event.streamid}`).attr('srcObject', event.stream);
         $(`#${event.streamid}`).removeAttr('controls');
       }
     };
-
     this.connection.open(this.roomId);
   }
+
 
   onStopShow() {
     this.hasShowStart = false;
