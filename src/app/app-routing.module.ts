@@ -10,11 +10,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'streamer',
+    path: 'streamer/:roomId',
     component: StreamerComponent,
   },
   {
-    path: 'viewer',
+    path: 'viewer/:roomId',
     component: ViewerComponent,
   }
 ];

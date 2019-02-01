@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../core/storage/storage.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { environment } from 'src/environments/environment';
-
-import * as uuid from 'uuid';
-
 import * as RTCMultiConnection from 'rtcmulticonnection';
 
 declare var $: any;
-declare var RTCMultiConnection: any;
 
 @Component({
   selector: 'gmp-streamer',
@@ -15,16 +12,18 @@ declare var RTCMultiConnection: any;
 })
 export class StreamerComponent implements OnInit {
 
-  connection = new RTCMultiConnection();
+  connection = null;
 
   hasShowStart = false;
 
-  constructor(private storageService: StorageService) { }
+  constructor(private activedRoute: ActivatedRoute) { }
 
   roomId: string;
 
   ngOnInit() {
-    this.roomId = uuid.v4();
+    this.activedRoute.params.subscribe((params) => {
+      this.roomId = params.roomId;
+    });
   }
 
   onCreateShow() {
@@ -46,10 +45,15 @@ export class StreamerComponent implements OnInit {
     };
 
     this.connection.onstream = function (event) {
-      $('#videos-container').append(event.mediaElement);
+      if (event.type === 'local') {
+        $('#videos-container').append(event.mediaElement);
+        $(`#${event.streamid}`).attr('autoplay', true);
+        $(`#${event.streamid}`).attr('playsinline', true);
+        $(`#${event.streamid}`).attr('muted', true);
+        $(`#${event.streamid}`).attr('srcObject', event.stream);
+        $(`#${event.streamid}`).removeAttr('controls');
+      }
     };
-
-    this.storageService.setRoomId(this.roomId);
 
     this.connection.open(this.roomId);
   }
