@@ -1,13 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, interval } from 'rxjs';
-
 import { environment } from 'src/environments/environment';
 
-import * as RTCMultiConnection from 'rtcmulticonnection';
-
-
-declare var $: any;
+import * as RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
+import * as $ from 'jquery/dist/jquery.min';
 
 const source = interval(5000);
 
@@ -50,12 +47,20 @@ export class ViewerComponent implements OnInit, OnDestroy {
           $(`#${event.streamid}`).attr('autoplay', true);
           $(`#${event.streamid}`).attr('playsinline', true);
           $(`#${event.streamid}`).attr('volume', 0);
-          $(`#${event.streamid}`).attr('muted', true);
+          $(`#${event.streamid}`).prop('muted', true)
           $(`#${event.streamid}`).attr('srcObject', event.stream);
           $(`#${event.streamid}`).removeAttr('controls');
+
+          $(`#${event.streamid}`).click(() => {
+            if ($(`#${event.streamid}`).prop('muted')) {
+              $(`#${event.streamid}`).prop('muted', false);
+            } else {
+              $(`#${event.streamid}`).prop('muted', true);
+            }
+          });
         }
       };
-      
+
       this.connection.onUserStatusChanged = event => {
         console.info(event.userid, event.status);
       };

@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { environment } from 'src/environments/environment';
-import * as RTCMultiConnection from 'rtcmulticonnection';
 
-declare var $: any;
+import * as RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
+import * as $ from 'jquery/dist/jquery.min';
 
 @Component({
   selector: 'gmp-streamer',
@@ -54,10 +53,18 @@ export class StreamerComponent implements OnInit {
         $('#videos-container').append(event.mediaElement);
         $(`#${event.streamid}`).attr('autoplay', true);
         $(`#${event.streamid}`).attr('playsinline', true);
-        $(`#${event.streamid}`).attr('muted', true);
+        $(`#${event.streamid}`).prop('muted', true) 
         $(`#${event.streamid}`).attr('volume', 0);
         $(`#${event.streamid}`).attr('srcObject', event.stream);
         $(`#${event.streamid}`).removeAttr('controls');
+
+        $(`#${event.streamid}`).click(() => {
+          if ($(`#${event.streamid}`).prop('muted')) {
+            $(`#${event.streamid}`).prop('muted', false);
+          } else {
+            $(`#${event.streamid}`).prop('muted', true);
+          }
+        });
       }
     };
     this.connection.open(this.roomId);
