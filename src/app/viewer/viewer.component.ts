@@ -3,8 +3,9 @@ import { environment } from 'src/environments/environment';
 
 import { StorageService } from '../core/storage/storage.service';
 
+import * as RTCMultiConnection from 'rtcmulticonnection';
+
 declare var $: any;
-declare var RTCMultiConnection: any;
 
 @Component({
   selector: 'gmp-viewer',
