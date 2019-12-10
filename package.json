@@ -24,7 +24,7 @@
     "core-js": "^3.2.1",
     "install": "^0.13.0",
     "jquery": "^3.3.1",
-    "npm": "^6.7.0",
+    "npm": "^6.13.3",
     "rtcmulticonnection": "^3.6.8",
     "rxjs": "~6.5.3",
     "socket.io": "latest",
