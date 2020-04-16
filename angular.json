@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "rtcmulticonnection-angular"
+  "defaultProject": "rtcmulticonnection-angular",
+  "cli": {
+    "analytics": "bb7f4220-378b-40d1-a1e5-9d5bffd3e337"
+  }
 }
