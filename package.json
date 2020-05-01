@@ -28,7 +28,7 @@
     "rxjs": "~6.5.5",
     "socket.io": "latest",
     "tslib": "^1.11.1",
-    "uuid": "^7.0.3",
+    "uuid": "^8.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
