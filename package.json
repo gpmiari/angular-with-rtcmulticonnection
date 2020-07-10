@@ -27,7 +27,7 @@
     "jquery": "^3.5.1",
     "rxjs": "~6.5.5",
     "socket.io": "latest",
-    "tslib": "^1.11.1",
+    "tslib": "^1.13.0",
     "uuid": "^8.2.0",
     "zone.js": "~0.10.3"
   },
