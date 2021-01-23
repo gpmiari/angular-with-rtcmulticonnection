@@ -27,7 +27,7 @@
     "rtcmulticonnection": "^3.7.0",
     "rxjs": "~6.6.3",
     "socket.io": "latest",
-    "tslib": "^2.0.3",
+    "tslib": "^2.1.0",
     "uuid": "^8.3.2",
     "zone.js": "~0.10.3"
   },
