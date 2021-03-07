@@ -23,7 +23,7 @@
     "bootstrap": "^4.6.0",
     "core-js": "^3.9.1",
     "install": "^0.13.0",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "rtcmulticonnection": "^3.7.0",
     "rxjs": "~6.6.6",
     "socket.io": "latest",
