@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^12.0.2",
     "@angular/platform-browser-dynamic": "^12.0.2",
     "@angular/router": "^12.0.2",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.0.2",
     "core-js": "^3.14.0",
     "install": "^0.13.0",
     "jquery": "^3.6.0",
