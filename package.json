@@ -16,7 +16,7 @@
     "@angular/common": "^13.0.1",
     "@angular/compiler": "^12.2.4",
     "@angular/core": "^13.2.4",
-    "@angular/forms": "^12.2.4",
+    "@angular/forms": "^13.2.6",
     "@angular/platform-browser": "^13.2.6",
     "@angular/platform-browser-dynamic": "^12.2.4",
     "@angular/router": "^12.2.4",
