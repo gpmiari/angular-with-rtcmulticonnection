@@ -29,7 +29,7 @@
     "socket.io": "latest",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2",
-    "zone.js": "~0.11.6"
+    "zone.js": "~0.11.7"
   },
   "devDependencies": {
     "@angular/cli": "^13.3.2",
