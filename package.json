@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^17.3.7",
     "@angular/router": "^17.3.6",
     "bootstrap": "^5.3.3",
-    "core-js": "^3.37.0",
+    "core-js": "^3.37.1",
     "install": "^0.13.0",
     "jquery": "^3.7.1",
     "rtcmulticonnection": "^3.7.1",
