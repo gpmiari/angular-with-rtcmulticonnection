@@ -19,7 +19,7 @@
     "@angular/forms": "^17.3.7",
     "@angular/platform-browser": "^17.3.7",
     "@angular/platform-browser-dynamic": "^17.3.7",
-    "@angular/router": "^17.3.6",
+    "@angular/router": "^18.2.2",
     "bootstrap": "^5.3.3",
     "core-js": "^3.37.0",
     "install": "^0.13.0",
