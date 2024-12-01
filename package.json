@@ -13,7 +13,7 @@
   "dependencies": {
     "@angular-devkit/build-angular": "^18.2.3",
     "@angular/animations": "^18.2.6",
-    "@angular/common": "^18.0.1",
+    "@angular/common": "^19.0.1",
     "@angular/compiler": "^15.2.5",
     "@angular/core": "^15.2.10",
     "@angular/forms": "^18.2.2",
