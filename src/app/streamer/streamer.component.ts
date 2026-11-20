@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
-import * as RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
-import * as $ from 'jquery/dist/jquery.min';
+import RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
+import $ from 'jquery';
 
 @Component({
   selector: 'gmp-streamer',

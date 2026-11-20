@@ -15,11 +15,14 @@
         </div>
     </div>
     <div class="row">
-        <button (click)="onCreateShow()" *ngIf="!hasShowStart">
-            Start Streaming
-        </button>
-        <button (click)="onStopShow()" *ngIf="!!hasShowStart">
-            Stop Streaming
-        </button>
+        @if (!hasShowStart) {
+            <button (click)="onCreateShow()">
+                Start Streaming
+            </button>
+        } @else {
+            <button (click)="onStopShow()">
+                Stop Streaming
+            </button>
+        }
     </div>
 </div>

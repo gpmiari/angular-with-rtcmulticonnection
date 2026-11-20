@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
-import * as uuid from 'uuid';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  imports: [RouterLink],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {

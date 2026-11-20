@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, interval } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
-import * as RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
-import * as $ from 'jquery/dist/jquery.min';
+import RTCMultiConnection from 'rtcmulticonnection/dist/RTCMultiConnection';
+import $ from 'jquery';
 
 const source = interval(5000);
 
